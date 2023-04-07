@@ -1,0 +1,17 @@
+version: "3.8"
+
+networks:
+  deltr:
+    external: true
+
+services:
+  traceroute:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: traceroute
+    restart: unless-stopped
+    networks:
+      - deltr
+   # ports:
+     # - "3000:3000"
